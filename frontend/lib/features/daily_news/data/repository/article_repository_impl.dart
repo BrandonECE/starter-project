@@ -50,8 +50,7 @@ class ArticleRepositoryImpl implements ArticleRepository {
 
   @override
   Future<void> removeArticle(ArticleEntity article) {
-    return _appDatabase.articleDAO
-        .deleteArticle(ArticleModel.fromEntity(article));
+    return _appDatabase.articleDAO.deleteArticleByUrl(article.url!);
   }
 
   @override
